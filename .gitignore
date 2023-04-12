@@ -1,7 +1,5 @@
 # Repo-specific GitIgnore ----------------------------------------------------------------------------------------------
-*.jpg
 *.jpeg
-*.png
 *.bmp
 *.tif
 *.tiff
@@ -13,7 +11,6 @@
 *.TIF
 *.TIFF
 *.HEIC
-*.mp4
 *.mov
 *.MOV
 *.avi
@@ -258,7 +255,8 @@ fabric.properties
 
 checkpoints/
 data/
-
+save/
+runs/
 
 *.pt
 *.pth
