@@ -259,11 +259,7 @@ fabric.properties
 checkpoints/
 data/
 
-*.jpg
-*.png
-*.avi
-*.mp4
-*.csv
+
 *.pt
 *.pth
 

@@ -17,18 +17,6 @@ def predict(model, image) :
             res.append((left, top, right, bottom, score))
     return res
 
-def get_args_parser():
-    parser = argparse.ArgumentParser()
-    parser.add_argument('--video', type= str, default= 'data/video_test/test.mov')
-    parser.add_argument('--image', type= str, default= 'data/test/trung-bien-so-dep-nhieu-xe-o-to-doi-gia-vai-ty-dong-gay-sot.jpg')
-    parser.add_argument('--source', type= str, default= 'video', choices= ['video', 'image'])
-    parser.add_argument('--save_results', type=str2bool, default= True)
-    parser.add_argument('--load_height', type= int, default= 360)
-    parser.add_argument('--load_width', type= int, default= 480)
-    parser.add_argument('--path_save', type= str, default= 'save')
-    parser.add_argument('--show', action='store_true', default= False)
-    args = parser.parse_args()
-    return args
 
 
 
@@ -91,6 +79,18 @@ def main(opt) :
             cv2.imshow('video', image)
         print(result)
 
+def get_args_parser():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--video', type= str, default= 'data/video_test/test.mov')
+    parser.add_argument('--image', type= str, default= 'data/test/trung-bien-so-dep-nhieu-xe-o-to-doi-gia-vai-ty-dong-gay-sot.jpg')
+    parser.add_argument('--source', type= str, default= 'video', choices= ['video', 'image'])
+    parser.add_argument('--save_results', type=str2bool, default= True)
+    parser.add_argument('--load_height', type= int, default= 360)
+    parser.add_argument('--load_width', type= int, default= 480)
+    parser.add_argument('--path_save', type= str, default= 'save')
+    parser.add_argument('--show', action='store_true', default= False)
+    args = parser.parse_args()
+    return args
 if __name__ == '__main__' :
     opt = get_args_parser()
     main(opt= opt)
