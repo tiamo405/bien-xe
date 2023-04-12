@@ -55,6 +55,7 @@ def main(opt) :
             frame = cv2.resize(frame, (LOAD_WIDTH, LOAD_HEIGHT))
             results = predict(model, frame)
             if results is not None :
+                print(results)
                 frame = draw_box(frame, results)
 
             end_time = time.time()
@@ -68,7 +69,7 @@ def main(opt) :
                 cv2.imshow('video', frame)
         cap.release()
         video.release()
-
+        print('Done, save video: {}'.format(os.path.join(PATH_SAVE, SOURCE, name_video.split('.')[0]+'.avi')))
     else :
         image = cv2.imread(IMAGE)
         result = predict(model, image)
@@ -76,8 +77,9 @@ def main(opt) :
         name_image = IMAGE.split('/')[-1]
         if SAVE_RESULTS:
             cv2.imwrite(os.path.join(PATH_SAVE, SOURCE, name_image), image)
+            print('Done, save image : {}'.format(os.path.join(PATH_SAVE, SOURCE, name_image)))
         if SHOW :
-            cv2.imshow('video', image)
+            cv2.imshow('image', image)
         print(result)
 
 def get_args_parser():

@@ -27,10 +27,13 @@ or
 ```
 python train.py --data coco.yaml --epochs 100 ----weights '' --cfg yolov5n.yaml  --batch-size 16
 ```
+* Pretrained
+[GDrive weight](https://drive.google.com/drive/folders/1t6BLi8lSbd6Blz0COKeuETF9Ue5gLf1k?usp=share_link)
 # 3.Test
 ```
-python demo.py --source video --video data/video_test/test.mov
-                --source image --image data/test/trung-bien-so-dep-nhieu-xe-o-to-doi-gia-vai-ty-dong-gay-sot.jpg
+python demo.py --source video --video data/video_test/test.mov --checkpoint_dir checkpoints/best.pt
+
+python demo.py --source image --image data/test/trung-bien-so-dep-nhieu-xe-o-to-doi-gia-vai-ty-dong-gay-sot.jpg --checkpoint_dir checkpoints/best.pt
 ```
 # 4. Colab
-
+[Colab demo](https://colab.research.google.com/drive/1qmCveSSAw380517KvhWTLb_QV0Ec_zyP?usp=sharing)
