@@ -30,11 +30,12 @@ def main(opt) :
     LOAD_WIDTH = opt.load_width
     PATH_SAVE = opt.path_save
     SHOW = opt.show
+    CHECKPOINT_DIR = opt.checkpoint_dir
 
     os.makedirs(PATH_SAVE, exist_ok= True)
     os.makedirs(os.path.join(PATH_SAVE, SOURCE), exist_ok= True)
 
-    model = torch.hub.load('./', 'custom', path='checkpoints/best.pt', source='local')
+    model = torch.hub.load('./', 'custom', path=CHECKPOINT_DIR, source='local')
     image = None
     if SOURCE =='video' :
         name_video = PATH_VIDEO.split('/')[-1]
@@ -84,6 +85,7 @@ def get_args_parser():
     parser.add_argument('--video', type= str, default= 'data/video_test/test.mov')
     parser.add_argument('--image', type= str, default= 'data/test/trung-bien-so-dep-nhieu-xe-o-to-doi-gia-vai-ty-dong-gay-sot.jpg')
     parser.add_argument('--source', type= str, default= 'video', choices= ['video', 'image'])
+    parser.add_argument('--checkpoint_dir', type= str, default= 'checkpoints/best.pt')
     parser.add_argument('--save_results', type=str2bool, default= True)
     parser.add_argument('--load_height', type= int, default= 360)
     parser.add_argument('--load_width', type= int, default= 480)
