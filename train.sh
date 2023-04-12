@@ -1,0 +1,1 @@
+python train.py --data coco.yaml --epochs 100 --weights '' --cfg yolov5n.yaml  --batch-size 128
