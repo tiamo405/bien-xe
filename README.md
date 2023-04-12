@@ -5,7 +5,16 @@ data __train __img1.jpg
     |__val   __img1.jpg
     |        |__img1.txt
     |__coco.yaml
+```
+* coco.yaml
+```
+train: data/train  # train images (relative to 'path') 128 images
+val: data/val  # val images (relative to 'path') 128 images
+test:  # test images (optional)
 
+# Classes
+names:
+  0: bienxe
 ```
 * Dowload data
 
