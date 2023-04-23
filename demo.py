@@ -18,11 +18,9 @@ def predict(model, image) :
     return res
 
 
-
-
 def main(opt) :
     
-    PATH_VIDEO = opt.video
+    PATH_VIDEO = opt.video # 'data/video_test/test.mov' -> 545644.mp4
     IMAGE = opt.image
     SOURCE = opt.source
     SAVE_RESULTS = opt.save_results

@@ -28,7 +28,7 @@ def draw_box(image, boxs) :
                      np.random.randint(255),
                      np.random.randint(255)) for _ in range(10)]
     for i, (left, top, right, bottom, score) in enumerate(boxs) :
-        cv2.rectangle(image, (left, top), ( right, bottom), color= colors[i], thickness= 2)
+        cv2.rectangle(image, (left, top), ( right, bottom), color= colors[i], thickness= 2) # vex hcn
         cv2.putText(image, "{:.2f}".format(score), (left, top- 16), cv2.FONT_HERSHEY_SIMPLEX, fontScale= 0.8, color= colors[i], thickness= 1, lineType= cv2.LINE_AA)
         second, minute, hour, day, month, year, dt_string = get_time()
         cv2.putText(image, "{}".format(dt_string), (left, top- 4), cv2.FONT_HERSHEY_SIMPLEX, fontScale= 0.5, color= colors[i], thickness= 1, lineType= cv2.LINE_AA)
